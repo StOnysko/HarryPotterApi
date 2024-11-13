@@ -4,8 +4,8 @@
 
 ## 🛠 Tech Stack
 
-### Programming Languages :
-- **Kotlin** .
+### Programming Languages:
+- **Kotlin**.
 
 ### Libraries and Tools:
 - **Jetpack Compose** 
@@ -16,7 +16,7 @@
 - **Hilt**
 - **Splash-Api31**
 
-## ⚙️ Features
+## ⚙️ Features:
 
 - User-friendly interface powered by Jetpack Compose.
 - Fast local data operations using Room.
