@@ -9,32 +9,16 @@ object Utils {
 }
 
 object UrlUtils {
-    fun getImageByURL(url: String, defaultUrl: String = Utils.MISSING_IMAGE): String {
-        return url.ifEmpty { defaultUrl }
+    fun getImageByURL(url: String?, defaultUrl: String = Utils.MISSING_IMAGE): String {
+        return if (url.isNullOrEmpty()) defaultUrl else url
     }
 
-    fun getHouseByUrl(url: String, defaultValue: String = "Not in a house"): String {
-        return url.ifEmpty { defaultValue }
+    fun getHouseByUrl(url: String?, defaultValue: String = "Not in a house"): String {
+        return if (url.isNullOrEmpty()) defaultValue else url
     }
 
-    fun getBirthByUrl(url: String?, defaultValue: String = "Unknown"): String {
-        return url ?: defaultValue
-    }
-
-    fun getSpeciesByUrl(url: String, defaultValue: String = "Unknown"): String {
-        return url.ifEmpty { defaultValue }
-    }
-
-    fun getGenderByUrl(url: String, defaultValue: String = "Unknown"): String {
-        return url.ifEmpty { defaultValue }
-    }
-
-    fun getActorByByUrl(url: String, defaultValue: String = "Unknown"): String {
-        return url.ifEmpty { defaultValue }
-    }
-
-    fun getAncestryByUrl(url: String, defaultValue: String = "Unknown"): String {
-        return url.ifEmpty { defaultValue }
+    fun getStringOrUnknown(url: String?, defaultValue: String = "Unknown"): String {
+        return if (url.isNullOrEmpty()) defaultValue else url
     }
 
     fun getSpellNameByUrl(
@@ -55,8 +39,10 @@ object UrlUtils {
 object HouseRowUtils {
     val houseRowList = listOf("All houses", "Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw")
 }
+
 object HouseUtils {
     val houseList = listOf("Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw")
+    const val ALL_HOUSES = "All houses"
 }
 
 object ScreenUtils {

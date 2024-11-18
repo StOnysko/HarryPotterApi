@@ -1,9 +1,10 @@
 package com.example.harrypotter.data.repository
 
+
 import com.example.harrypotter.data.network.ApiService
 import com.example.harrypotter.data.room.CharacterSpellDao
-import com.example.harrypotter.presentation.ui.models.Character
-import com.example.harrypotter.presentation.ui.models.Spell
+import com.example.harrypotter.ui.models.Spell
+import com.example.harrypotter.ui.models.Character
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlin.compose.compiler)
     id("com.google.dagger.hilt.android")
+    id ("androidx.navigation.safeargs.kotlin")
     kotlin("kapt")
 }
 
@@ -12,7 +13,6 @@ android {
 
     configurations.all {
         exclude("com.intellij", "annotations")
-//        resolutionStrategy.force("org.jetbrains:annotations:23.0.0")
     }
 
     defaultConfig {
@@ -46,6 +46,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -68,35 +69,32 @@ dependencies {
     // Splash Api-31
     implementation(libs.androidx.core.splashscreen)
 
-    // Shimmer effect
-    implementation(libs.compose.shimmer)
-
-    // Url to image.
-    implementation(libs.coil.compose)
-
-    // ViewModel compose.
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-
     // Hilt Dependency injection.
-    implementation(libs.androidx.hilt.navigation.compose.v100)
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation(libs.androidx.hilt.navigation.compose.v100) // Compose
+    kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.android)
 
-    // Jetpack Compose Navigation
-    implementation(libs.androidx.navigation.compose)
+    // Coil.
+    implementation (libs.coil)
 
     // Retrofit.
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
+    // Navigation Component.
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.activity)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

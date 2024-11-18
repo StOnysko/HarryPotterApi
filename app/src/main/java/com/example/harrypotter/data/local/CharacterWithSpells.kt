@@ -3,7 +3,7 @@ package com.example.harrypotter.data.local
 import androidx.room.Embedded
 import androidx.room.Junction
 import androidx.room.Relation
-import com.example.harrypotter.presentation.ui.models.Character
+import com.example.harrypotter.ui.models.Character
 
 data class CharacterWithSpells(
     @Embedded val characterRoom: CharacterRoom,

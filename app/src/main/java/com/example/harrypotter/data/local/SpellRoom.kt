@@ -2,7 +2,7 @@ package com.example.harrypotter.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.harrypotter.presentation.ui.models.Spell
+import com.example.harrypotter.ui.models.Spell
 
 @Entity
 data class SpellRoom(

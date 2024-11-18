@@ -1,0 +1,45 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/chooseOptionFragment2">
+
+    <fragment
+        android:id="@+id/chooseOptionFragment2"
+        android:name="com.example.harrypotter.ui.fragments.ChooseOptionFragment"
+        android:label="fragment_choose_option"
+        tools:layout="@layout/fragment_choose_option">
+        <action
+            android:id="@+id/action_chooseOptionFragment2_to_spellListFragment"
+            app:destination="@id/spellListFragment" />
+        <action
+            android:id="@+id/action_chooseOptionFragment2_to_characterListFragment"
+            app:destination="@id/characterListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/spellListFragment"
+        android:name="com.example.harrypotter.ui.fragments.spellList.SpellListFragment"
+        android:label="fragment_spell_list"
+        tools:layout="@layout/fragment_spell_list" />
+
+    <fragment
+        android:id="@+id/characterListFragment"
+        android:name="com.example.harrypotter.ui.fragments.characterList.CharacterListFragment"
+        android:label="fragment_character_list"
+        tools:layout="@layout/fragment_character_list">
+        <action
+            android:id="@+id/action_characterListFragment_to_characterFragment"
+            app:destination="@id/characterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="com.example.harrypotter.ui.fragments.character.CharacterFragment"
+        android:label="CharacterFragment">
+        <argument
+            android:name="character"
+            app:argType="com.example.harrypotter.ui.models.Character" />
+    </fragment>
+
+</navigation>
